@@ -5,11 +5,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
 	 var nyt= /nytimes.com/g;
 	 var wapo= /washingtonpost.com/g;
 	 if( url.match(nyt)  ){
-		 console.log('you are on new york times');
 		 chrome.tabs.executeScript(activeTab.id, {file: 'nyt.js'});
 	 }
 	 if(url.match(wapo)){
-		 console.log('you are on washington post');
+		 chrome.tabs.executeScript(activeTab.id, {file: 'wapo.js'});
 	 }
 
   });
